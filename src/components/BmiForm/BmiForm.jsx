@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../App/App.css';
+import { i18nConfig, language } from '../../i18n.js';
 
 const initialValues = {
 	weight: '',
@@ -29,11 +30,15 @@ const BmiForm = ({ change }) => {
 		setState(initialValues);
 	};
 
+  const i18nMessages = i18nConfig.messages[language];
+
 	return (
 		<>
 			<div className="row">
 				<div className="col m6 s12">
-					<label htmlFor="weight">Weight (in kg)</label>
+					<label class="fl" htmlFor="weight">
+            {i18nMessages.weight} ({i18nMessages.inPreposit} {i18nMessages.weightMeasure})
+          </label>
 					<input
 						id="weight"
 						name="weight"
@@ -47,7 +52,9 @@ const BmiForm = ({ change }) => {
 				</div>
 
 				<div className="col m6 s12">
-					<label htmlFor="height">Height (in cm)</label>
+					<label class="fl" htmlFor="height">
+            {i18nMessages.height} ({i18nMessages.inPreposit} {i18nMessages.heightMeasure})
+          </label>
 					<input
 						id="height"
 						name="height"
@@ -68,7 +75,7 @@ const BmiForm = ({ change }) => {
 					disabled={state.weight === '' || state.height === ''}
 					onClick={handleSubmit}
 				>
-					Calculate BMI
+          {i18nMessages.calculate}
 				</button>
 			</div>
 		</>

@@ -1,8 +1,12 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
+import { i18nConfig, language } from '../../i18n.js';
 
 const Bar = ({ labelData, bmiData }) => {
+
+  const i18nBmi = i18nConfig.messages[language].bmi;
+
   const data = canvas => {
     const ctx = canvas.getContext('2d');
     const gradient = ctx.createLinearGradient(63, 81, 181, 700);
@@ -13,7 +17,7 @@ const Bar = ({ labelData, bmiData }) => {
       labels: labelData,
       datasets: [
         {
-          label: 'BMI',
+          label: i18nBmi,
           data: bmiData,
           backgroundColor: gradient,
           borderColor: '#3F51B5',
@@ -26,6 +30,8 @@ const Bar = ({ labelData, bmiData }) => {
     };
   };
 
+  const i18nDate = i18nConfig.messages[language].date;
+
   const options = {
     responsive: true,
     scales: {
@@ -33,7 +39,7 @@ const Bar = ({ labelData, bmiData }) => {
         {
           scaleLabel: {
             display: true,
-            labelString: 'Date',
+            labelString: i18nDate.charAt(0).toUpperCase() + i18nDate.slice(1),
             fontSize: 18,
             fontColor: 'white'
           },
@@ -51,7 +57,7 @@ const Bar = ({ labelData, bmiData }) => {
         {
           scaleLabel: {
             display: true,
-            labelString: 'BMI',
+            labelString: i18nBmi,
             fontSize: 18,
             fontColor: 'white'
           },

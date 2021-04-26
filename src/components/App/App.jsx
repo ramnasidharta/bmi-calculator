@@ -5,6 +5,7 @@ import './App.css';
 import BmiForm from '../BmiForm/BmiForm';
 import Info from '../Info/Info';
 import Bar from '../Bar/Bar';
+import { i18nConfig, language } from '../../i18n.js';
 import { getData, storeData } from '../../helpers/localStorage';
 
 const App = () => {
@@ -42,10 +43,12 @@ const App = () => {
     setState(getData('lastState'));
   };
 
+  const i18nMessages = i18nConfig.messages[language];
+
   return (
     <div className='container'>
       <div className='row center'>
-        <h1 className='white-text'> BMI Tracker </h1>
+        <h1 className='white-text'> {i18nMessages.title} </h1>
       </div>
       <div className='row'>
         <div className='col m12 s12'>
@@ -53,7 +56,7 @@ const App = () => {
           <Bar labelData={data.date} bmiData={data.bmi} />
           <div>
             <div className='row center'>
-              <h4 className='white-text'>7 Day Data</h4>
+              <h4 className='white-text'>{i18nMessages.last7Days}</h4>
             </div>
             <div className='data-container row'>
               {state.length > 0 ? (
@@ -71,7 +74,7 @@ const App = () => {
                   ))}
                 </>
               ) : (
-                  <div className='center white-text'>No log found</div>
+                  <div className='center white-text'>{i18nMessages.noLogFound}</div>
                 )}
             </div>
           </div>

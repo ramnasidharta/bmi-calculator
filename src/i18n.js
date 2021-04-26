@@ -6,8 +6,11 @@ const messages = {
         height: "height",
         weightMeasure: "lb",
         heightMeasure: "ft/in",
-        calculateButton: "Calculate BMI",
-        date: "date"
+        calculate: "Calculate BMI",
+        date: "date",
+        last7Days: "7 Day Data",
+        noLogFound: "No log found",
+        inPreposit: "in",
     },
     pt: {
         bmi: "IMC",
@@ -16,8 +19,11 @@ const messages = {
         height: "altura",
         weightMeasure: "kg",
         heightMeasure: "cm",
-        calculateButton: "Calcular IMC",
-        date: "data"
+        calculate: "Calcular IMC",
+        date: "data",
+        last7Days: "Dados de 7 dias",
+        noLogFound: "Nenhum dado encontrado",
+        inPreposit: "em",
     }
 }
 
