@@ -1,0 +1,7 @@
+.fl {
+  display: inline-block;
+}
+
+.fl:first-letter {
+  text-transform: uppercase;
+}
