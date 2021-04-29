@@ -5,11 +5,18 @@ import './App.css';
 import BmiForm from '../BmiForm/BmiForm';
 import Info from '../Info/Info';
 import Bar from '../Bar/Bar';
-import { i18nConfig, language } from '../../i18n.js';
+import { i18nConfig, language, i18nDate } from '../../i18n.js';
 import { getData, storeData } from '../../helpers/localStorage';
 
 const App = () => {
-  const initialState = () => getData('data') || [];
+  const i18nMessages = i18nConfig.messages[language];
+
+  const allData = (getData('data') || []).map(x => {
+    x.date = i18nDate(x.date);
+    x.weight = (x.weight * i18nMessages.weightFactor).toFixed(2);
+    return x;
+  });
+  const initialState = () => allData || [];
   const [state, setState] = useState(initialState);
   const [data, setData] = useState({});
 
@@ -23,7 +30,8 @@ const App = () => {
 
   const handleChange = val => {
     let heightInM = val.height / 100;
-    val.bmi = (val.weight / (heightInM * heightInM)).toFixed(2);
+    let weight = val.weight * i18nMessages.weightFactor;
+    val.bmi = (weight / (heightInM * heightInM)).toFixed(2);
     val.id = uuidv4();
     let newVal = [...state, val];
     let len = newVal.length;
@@ -42,8 +50,6 @@ const App = () => {
   const handleUndo = () => {
     setState(getData('lastState'));
   };
-
-  const i18nMessages = i18nConfig.messages[language];
 
   return (
     <div className='container'>

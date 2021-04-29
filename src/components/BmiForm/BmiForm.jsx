@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../App/App.css';
-import { i18nConfig, language } from '../../i18n.js';
+import { i18nConfig, language, i18nDate } from '../../i18n.js';
 
 const initialValues = {
 	weight: '',
 	height: '',
 	date: ''
+}
+
+function updateDateFormat(states) {
+  return states.map(s => {
+    s.date = i18nDate(s.date);
+  })
 }
 
 const BmiForm = ({ change }) => {
@@ -17,13 +23,13 @@ const BmiForm = ({ change }) => {
 		if (value > 999) {
 			value = 999;
 		}
-		const date = new Date().toLocaleString().split(',')[0];
+    const date = i18nDate(new Date());
 		setState({
 			...state,
 			[name]: value,
 			date
 		});
-	};
+  }
 
 	const handleSubmit = () => {
 		change(state);
