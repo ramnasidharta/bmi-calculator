@@ -153,7 +153,7 @@ Dito isso, ao calcular o IMC, obtemos o fator multiplicativo através do utilit�
 
 ## Resultado
 
-Observo o resultado final. Este é o software no idioma original:
+Observe o resultado final. Este é o software no idioma original:
 
 ![en1.png](https://github.com/ramnasidharta/bmi-calculator/blob/master/images/screenshot1.png)
 ![en2.png](https://github.com/ramnasidharta/bmi-calculator/blob/master/images/screenshot2.png)
