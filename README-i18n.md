@@ -155,15 +155,14 @@ Dito isso, ao calcular o IMC, obtemos o fator multiplicativo através do utilit�
 
 Observo o resultado final. Este é o software no idioma original:
 
-![I18n%20para%20um%20registrador%20de%20IMC%20922b53020875408d92688dd5eaa84b27/Untitled.png](I18n%20para%20um%20registrador%20de%20IMC%20922b53020875408d92688dd5eaa84b27/Untitled.png)
-
-![I18n%20para%20um%20registrador%20de%20IMC%20922b53020875408d92688dd5eaa84b27/Untitled%201.png](I18n%20para%20um%20registrador%20de%20IMC%20922b53020875408d92688dd5eaa84b27/Untitled%201.png)
+![en1.png](https://github.com/ramnasidharta/bmi-calculator/blob/master/images/screenshot1.png)
+![en2.png](https://github.com/ramnasidharta/bmi-calculator/blob/master/images/screenshot2.png)
 
 E, após simplesmente alterar a linguagem do brower para português, se o aplicativo é acessado novamente, vê-se o seguinte:
 
-![I18n%20para%20um%20registrador%20de%20IMC%20922b53020875408d92688dd5eaa84b27/Untitled%202.png](I18n%20para%20um%20registrador%20de%20IMC%20922b53020875408d92688dd5eaa84b27/Untitled%202.png)
+![pt1.png](https://github.com/ramnasidharta/bmi-calculator/blob/master/images/screenshot3.png)
 
-![I18n%20para%20um%20registrador%20de%20IMC%20922b53020875408d92688dd5eaa84b27/Untitled%203.png](I18n%20para%20um%20registrador%20de%20IMC%20922b53020875408d92688dd5eaa84b27/Untitled%203.png)
+![pt2.png](https://github.com/ramnasidharta/bmi-calculator/blob/master/images/screenshot4.png)
 
 Note o idioma, as datas, e note também que os valores de IMC são os mesmos, enquanto os valores para "Peso" e "Weight" são diferentes, indicando que de fato o software salvou o valor na unidade de medida correta, e que também calculou o IMC corretamente.
 
