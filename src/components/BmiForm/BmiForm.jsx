@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../App/App.css';
 import { i18nConfig, language, i18nDate } from '../../i18n.js';
+import { FormattedMessage } from 'react-intl';
 
 const initialValues = {
 	weight: '',
@@ -36,14 +37,12 @@ const BmiForm = ({ change }) => {
 		setState(initialValues);
 	};
 
-  const i18nMessages = i18nConfig.messages[language];
-
 	return (
 		<>
 			<div className="row">
 				<div className="col m6 s12">
 					<label class="fl" htmlFor="weight">
-            {i18nMessages.weight} ({i18nMessages.inPreposit} {i18nMessages.weightMeasure})
+            <FormattedMessage id="weight"/> (<FormattedMessage id="inPreposit"/> <FormattedMessage id="weightMeasure"/>)
           </label>
 					<input
 						id="weight"
@@ -59,7 +58,7 @@ const BmiForm = ({ change }) => {
 
 				<div className="col m6 s12">
 					<label class="fl" htmlFor="height">
-            {i18nMessages.height} ({i18nMessages.inPreposit} {i18nMessages.heightMeasure})
+            <FormattedMessage id="height"/> (<FormattedMessage id="inPreposit"/> <FormattedMessage id="heightMeasure"/>)
           </label>
 					<input
 						id="height"
@@ -81,7 +80,7 @@ const BmiForm = ({ change }) => {
 					disabled={state.weight === '' || state.height === ''}
 					onClick={handleSubmit}
 				>
-          {i18nMessages.calculate}
+          <FormattedMessage id="calculate"/>
 				</button>
 			</div>
 		</>

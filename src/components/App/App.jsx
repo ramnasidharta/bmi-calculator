@@ -5,6 +5,7 @@ import './App.css';
 import BmiForm from '../BmiForm/BmiForm';
 import Info from '../Info/Info';
 import Bar from '../Bar/Bar';
+import { FormattedMessage } from 'react-intl';
 import { i18nConfig, language, i18nDate } from '../../i18n.js';
 import { getData, storeData } from '../../helpers/localStorage';
 
@@ -54,7 +55,9 @@ const App = () => {
   return (
     <div className='container'>
       <div className='row center'>
-        <h1 className='white-text'> {i18nMessages.title} </h1>
+        <h1 className='white-text'>
+          <FormattedMessage id="title"/>
+        </h1>
       </div>
       <div className='row'>
         <div className='col m12 s12'>
@@ -62,7 +65,9 @@ const App = () => {
           <Bar labelData={data.date} bmiData={data.bmi} />
           <div>
             <div className='row center'>
-              <h4 className='white-text'>{i18nMessages.last7Days}</h4>
+              <h4 className='white-text'>
+                <FormattedMessage id="last7Days"/>
+              </h4>
             </div>
             <div className='data-container row'>
               {state.length > 0 ? (
@@ -80,7 +85,9 @@ const App = () => {
                   ))}
                 </>
               ) : (
-                  <div className='center white-text'>{i18nMessages.noLogFound}</div>
+                  <div className='center white-text'>
+                    <FormattedMessage id="noLogFound"/>
+                  </div>
                 )}
             </div>
           </div>
